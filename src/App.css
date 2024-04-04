@@ -1,38 +1,59 @@
-.App {
+table{
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed; 
+}
+
+.fixed-row{
+  position: fixed;
+  top: 143px;
+  background-color: white;
+}
+
+.spreadsheet-table {
+  overflow-y: auto; 
+  height: 100%;
+  margin-top: 169px; 
+}
+
+
+
+.spreadsheet-table th, .spreadsheet-table td ,.fixed-row th, .fixed-row td{
+  border: 1px solid #ccc; /* Add border to cells */
+  padding: 1px; /* Add padding to cells */
+}
+
+.spreadsheet-table th:first-child,
+.spreadsheet-table td:first-child ,
+.fixed-row th:first-child,
+.fixed-row td:first-child {
+  width: 40px; /* Set width for the first cell in each row */
   text-align: center;
+  font-size: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.spreadsheet-table th:not(:first-child),
+.spreadsheet-table td:not(:first-child),
+.fixed-row th:not(:first-child),
+.fixed-row td:not(:first-child) {
+  width: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.spreadsheet-table input {
+  box-sizing: border-box;
+  padding: 6px;
+  width: 100px; 
+  border: none; /* Remove input border */
+  outline: none; /* Remove outline on focus */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.spreadsheet-table input:focus {
+  border: none;
+  outline: none; /* Remove outline on focus */
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+td:focus-within {
+  outline: 2px solid rgb(11 87 208); /* Light blue outline for cells with focus within */
 }
